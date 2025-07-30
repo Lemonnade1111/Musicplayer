@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'lucida grande';
+}
+
+body {
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.music-player {
+  width: 350px; 
+  height: 500px;
+  padding: 20px;
+  border-radius: 35px;
+  background: url('Images/background (4).png') no-repeat center/cover;
+  background-blend-mode: overlay;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+top: 12%;
+left: 40%;
+transform: translate(-50%, -50%);
+  animation: float 4s ease-in-out infinite;
+    -webkit-app-region: drag; 
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px; 
+}
+.screen img {
+  width: 250px;
+  height: 226px;
+  border-radius: 5px;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+}
+
+.screen h3 {
+  color: #d14ba5;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.screen p {
+  color: #7a5d79;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.progress-container {
+  background: #740f45;
+  border-radius: 10px;
+  height: 10px;
+  width: 90%;
+  margin: 5px 0 15px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress {
+  background: #d14ba5;
+  height: 100%;
+  width: 0%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #d14ba5;
+  transition: width 0.2s ease;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 10px 0;
+  background-color: rgba(255, 240, 248, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.controls button {
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.controls button img {
+  width: 50px;      /* adjust button size */
+  height: 50px;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.controls button img:hover {
+  transform: scale(1.1);
+}
+.drag-area {
+  -webkit-app-region: drag;
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.controls button,
+.controls img {
+  -webkit-app-region: no-drag;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cute Music Player</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="music-player">
+    <div class="drag-area"></div>
+    <div class="screen">
+      <img id="cover" src="Images/lovedive.jpg" alt="Cover Image"/>
+      <h3 id="title">Love Dive</h3>
+      <p id="artist">IVE</p>
+    </div>
+
+    <div class="progress-container" onclick="setProgress(event)">
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <div class="controls">
+  <button onclick="prevSong()">
+    <img src="Images/backwards.png" alt="Previous" />
+  </button>
+  <button id="playBtn" onclick="togglePlay()">
+    <img src="Images/play button.png" alt="Play" />
+  </button>
+  <button onclick="nextSong()">
+    <img src="Images/fastforward.png" alt="Next" />
+  </button>
+</div>
+   <audio id="audio" src="Music/IVE 'LOVE DIVE' Lyrics (아이브 LOVE DIVE 가사) (Color Coded Lyrics).mp3"></audio>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
